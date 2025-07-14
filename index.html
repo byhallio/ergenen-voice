@@ -18,6 +18,48 @@
     .usp-box { background: #222; border-left: 5px solid #00ffe5; padding: 1rem; margin: 2rem auto; width: 80%; border-radius: 8px; text-align: left; }
     .usp-box ul { list-style: disc; padding-left: 1.5rem; }
   </style>
+</head>
+<body>
+  <div class="language-switcher">
+    <select onchange="switchLanguage(this.value)">
+      <option value="de">Deutsch</option>
+      <option value="en">English</option>
+    </select>
+  </div>
+
+  <img src="https://cdn.pixabay.com/photo/2023/06/23/11/20/ai-8083674_960_720.jpg" id="avatarImage" class="logo-animated" alt="Avatar" />
+  <div id="avatarLabel">Aurora (Illustration)</div>
+
+  <h1 id="content-de">Willkommen bei ergenen Voice – Deine KI-Teamplattform</h1>
+  <h1 id="content-en" style="display:none">Welcome to ergenen Voice – Your AI Team Platform</h1>
+
+  <div class="progress-bar"><div class="progress"></div></div>
+  <div class="spinner"></div>
+
+  <select id="voiceSelector">
+    <option value="aurora">Aurora – Weiblich (DE)</option>
+    <option value="nova">Nova – Neutral (EN)</option>
+    <option value="leo">Leo – Männlich (DE)</option>
+    <option value="gemini">Gemini – Symbolisch (EN)</option>
+  </select>
+
+  <audio id="voicePlayer" controls>
+    <source id="voiceSource" src="" type="audio/mpeg" />
+    Dein Browser unterstützt kein Audio.
+  </audio>
+
+  <div class="usp-box">
+    <h2>Was dich erwartet:</h2>
+    <ul>
+      <li>Individuell wählbare KI-Stimmen</li>
+      <li>Avatare passend zur Persönlichkeit</li>
+      <li>Nahtlose Integration mit deinem CMS</li>
+      <li>Mehrsprachigkeit mit automatischer Speicherung</li>
+    </ul>
+  </div>
+
+  <a class="external-link" href="mailto:officehurni@gmail.com">Kontakt & Feedback senden</a>
+
   <script>
     function switchLanguage(lang) {
       const contentDe = document.getElementById('content-de');
@@ -70,11 +112,8 @@
       document.getElementById('voicePlayer').load();
     }
 
-    window.onload = function () {
-      switchLanguage(getLanguageFromCookie());
-    };
-
     window.addEventListener('DOMContentLoaded', () => {
+      switchLanguage(getLanguageFromCookie());
       const selector = document.getElementById('voiceSelector');
       if (selector) {
         selector.addEventListener('change', updateVoicePlayer);
@@ -82,47 +121,5 @@
       }
     });
   </script>
-</head>
-<body>
-  <div class="language-switcher">
-    <select onchange="switchLanguage(this.value)">
-      <option value="de">Deutsch</option>
-      <option value="en">English</option>
-    </select>
-  </div>
-
-  <img src="https://cdn.pixabay.com/photo/2023/06/23/11/20/ai-8083674_960_720.jpg" id="avatarImage" class="logo-animated" alt="Avatar" />
-  <div id="avatarLabel">Aurora (Illustration)</div>
-
-  <h1 id="content-de">Willkommen bei ergenen Voice – Deine KI-Teamplattform</h1>
-  <h1 id="content-en" style="display:none">Welcome to ergenen Voice – Your AI Team Platform</h1>
-
-  <div class="progress-bar"><div class="progress"></div></div>
-
-  <div class="spinner"></div>
-
-  <select id="voiceSelector">
-    <option value="aurora">Aurora – Weiblich (DE)</option>
-    <option value="nova">Nova – Neutral (EN)</option>
-    <option value="leo">Leo – Männlich (DE)</option>
-    <option value="gemini">Gemini – Symbolisch (EN)</option>
-  </select>
-
-  <audio id="voicePlayer" controls>
-    <source id="voiceSource" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_f086b17865.mp3?filename=female-narration-voice-sample-17253.mp3" type="audio/mpeg" />
-    Dein Browser unterstützt kein Audio.
-  </audio>
-
-  <div class="usp-box">
-    <h2>Was dich erwartet:</h2>
-    <ul>
-      <li>Individuell wählbare KI-Stimmen</li>
-      <li>Avatare passend zur Persönlichkeit</li>
-      <li>Nahtlose Integration mit deinem CMS</li>
-      <li>Mehrsprachigkeit mit automatischer Speicherung</li>
-    </ul>
-  </div>
-
-  <a class="external-link" href="mailto:officehurni@gmail.com">Kontakt & Feedback senden</a>
 </body>
 </html>
